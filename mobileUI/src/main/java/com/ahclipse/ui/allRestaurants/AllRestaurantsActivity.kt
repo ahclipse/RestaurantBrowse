@@ -1,8 +1,9 @@
 package com.ahclipse.ui.allRestaurants
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahclipse.ui.R
 import com.ahclipse.ui.injection.ViewModelFactory
 import com.ahclipse.ui.presentation.GetRestaurantsViewModel
@@ -24,8 +25,8 @@ class AllRestaurantsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_all_restaurants)
         AndroidInjection.inject(this)
 
-//        getRestaurantsViewModel = ViewModelProviders.of(this, viewModelFactory)
-//            .get(GetRestaurantsViewModel::class.java)
+        getRestaurantsViewModel = ViewModelProviders.of(this, viewModelFactory)
+            .get(GetRestaurantsViewModel::class.java)
 
         setupRestaurantsRecycler()
     }

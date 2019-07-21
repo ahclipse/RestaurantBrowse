@@ -1,8 +1,8 @@
 package com.ahclipse.ui.presentation
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.ahclipse.data.interactor.GetRestaurants
 import com.ahclipse.data.model.RestaurantEntity
 import com.ahclipse.ui.presentation.mapper.RestaurantViewMapper

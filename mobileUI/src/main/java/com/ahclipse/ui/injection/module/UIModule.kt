@@ -1,7 +1,7 @@
 package com.ahclipse.ui.injection.module
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.ahclipse.data.executor.PostExecutionThread
 import com.ahclipse.ui.UIThread
 import com.ahclipse.ui.allRestaurants.AllRestaurantsActivity

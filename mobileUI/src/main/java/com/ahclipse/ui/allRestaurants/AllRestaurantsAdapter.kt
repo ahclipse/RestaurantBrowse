@@ -1,16 +1,17 @@
 package com.ahclipse.ui.allRestaurants
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.ahclipse.ui.R
 import com.ahclipse.ui.presentation.model.RestaurantView
 import javax.inject.Inject
 
-class AllRestaurantsAdapter @Inject constructor() : RecyclerView.Adapter<AllRestaurantsAdapter.ViewHolder>() {
+class AllRestaurantsAdapter @Inject constructor() :
+    RecyclerView.Adapter<AllRestaurantsAdapter.ViewHolder>() {
 
     var restaurants: List<RestaurantView> = arrayListOf()
 
