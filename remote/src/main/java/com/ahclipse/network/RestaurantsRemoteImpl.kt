@@ -14,7 +14,7 @@ class RestaurantsRemoteImpl @Inject constructor(
 
     override fun getRestaurants(): Observable<List<RestaurantEntity>> {
         return service.getRestaurants(37.422740, -122.139956, 0, 50).map { it ->
-            it.restaurants.map { mapper.mapFromRecord(it) }
+            it.map { mapper.mapFromRecord(it) }
         }
     }
 }

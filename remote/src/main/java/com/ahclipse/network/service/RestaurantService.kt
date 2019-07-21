@@ -1,6 +1,6 @@
 package com.ahclipse.network.service
 
-import com.ahclipse.network.model.RestaurantResponseRecord
+import com.ahclipse.network.model.RestaurantRecord
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -11,5 +11,5 @@ interface RestaurantService {
     fun getRestaurants(
         @Query("lat") latitude: Double, @Query("lng") longitude: Double,
         @Query("offset") offset: Int, @Query("limit") limit: Int
-    ): Observable<RestaurantResponseRecord>
+    ): Observable<List<RestaurantRecord>>
 }

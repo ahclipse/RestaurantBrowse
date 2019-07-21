@@ -54,6 +54,7 @@ dependencies {
     implementation mobileUIDependencies.supportRecyclerView
     implementation mobileUIDependencies.supportDesign
     implementation mobileUIDependencies.lifecycleExtensions
+    implementation mobileUIDependencies.picasso
 
     kapt mobileUIDependencies.daggerCompiler
     kapt mobileUIDependencies.daggerProcessor

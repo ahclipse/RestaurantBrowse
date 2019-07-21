@@ -42,7 +42,9 @@ class GetRestaurantsViewModel @Inject constructor(
             )
         }
 
-        override fun onComplete() {}
+        override fun onComplete() {
+            // No implementation required
+        }
 
         override fun onError(e: Throwable) {
             liveData.postValue(Resource(ResourceState.ERROR, null, e.localizedMessage))

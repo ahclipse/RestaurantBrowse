@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ahclipse.ui.R
 import com.ahclipse.ui.presentation.model.RestaurantView
+import com.squareup.picasso.Picasso
 import javax.inject.Inject
 
 class AllRestaurantsAdapter @Inject constructor() :
@@ -28,14 +29,11 @@ class AllRestaurantsAdapter @Inject constructor() :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val restaurant = restaurants[position]
+        Picasso.get().load(restaurant.coverImg).placeholder(R.drawable.ic_domain_black)
+            .error(R.drawable.ic_error_red).into(holder.restaurantImg)
         holder.restaurantName.text = restaurant.name
         holder.restaurantDescription.text = restaurant.description
         holder.restaurantStatus.text = restaurant.status
-
-//        Glide.with(holder.itemView.context)
-//            .load(project.ownerAvatar)
-//            .apply(RequestOptions.circleCropTransform())
-//            .into(holder.restaurantImg)
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
