@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -42,16 +43,27 @@ dependencies {
     implementation project(':remote')
 
     implementation mobileUIDependencies.javaxAnnotation
+    implementation mobileUIDependencies.androidAnnotations
     implementation mobileUIDependencies.kotlin
     implementation mobileUIDependencies.javaxInject
     implementation mobileUIDependencies.rxKotlin
-    implementation mobileUIDependencies.appCompatV7
     implementation mobileUIDependencies.constraintLayout
     implementation mobileUIDependencies.rxAndroid
+    implementation mobileUIDependencies.dagger
+    implementation mobileUIDependencies.daggerSupport
+    implementation mobileUIDependencies.supportRecyclerView
+    implementation mobileUIDependencies.supportDesign
+    implementation mobileUIDependencies.lifecycleExtensions
+
+    kapt mobileUIDependencies.daggerCompiler
+    kapt mobileUIDependencies.daggerProcessor
 
     testImplementation mobileUITestDependencies.kotlinJUnit
     androidTestImplementation mobileUITestDependencies.junit
     androidTestImplementation mobileUITestDependencies.mockito
     androidTestImplementation mobileUITestDependencies.supportRunner
     androidTestImplementation mobileUITestDependencies.espressoCore
+
+    kaptTest mobileUIDependencies.daggerCompiler
+    kaptAndroidTest mobileUIDependencies.daggerCompiler
 }

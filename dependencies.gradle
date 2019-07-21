@@ -17,6 +17,8 @@ ext {
     okHttpVersion = '4.0.1'
     retrofitVersion = '2.6.0'
     constraintLayoutVersion = '1.1.3'
+    daggerVersion = '2.23.2'
+    archCompVersion = '2.0.0'
 
     //Testing
     jUnitVersion = '4.12'
@@ -63,13 +65,20 @@ ext {
     ]
 
     mobileUIDependencies = [
-            javaxAnnotation : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
-            rxKotlin        : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            rxAndroid       : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            javaxInject     : "javax.inject:javax.inject:${javaxInjectVersion}",
-            appCompatV7     : "com.android.support:appcompat-v7:${supportLibraryVersion}",
-            constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}"
+            javaxAnnotation    : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            androidAnnotations : "com.android.support:support-annotations:${supportLibraryVersion}",
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+            rxKotlin           : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaxInject        : "javax.inject:javax.inject:${javaxInjectVersion}",
+            supportDesign      : "com.android.support:design:${supportLibraryVersion}",
+            constraintLayout   : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerSupport      : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerProcessor    : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            supportRecyclerView: "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+            lifecycleExtensions: "androidx.lifecycle:lifecycle-extensions:${archCompVersion}"
     ]
 
     mobileUITestDependencies = [

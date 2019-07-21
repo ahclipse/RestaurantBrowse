@@ -8,13 +8,13 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RestaurantServiceFactory {
+object RestaurantServiceFactory {
 
-    private val baseUrl = "https://api.doordash.com/"
-    private val connectTimeoutSeconds: Long = 120
-    private val readTimeoutSeconds: Long = 120
+    private const val baseUrl = "https://api.doordash.com/"
+    private const val connectTimeoutSeconds: Long = 120
+    private const val readTimeoutSeconds: Long = 120
 
-    fun makeRestaurantService(isDebug: Boolean): RestaurantService {
+    open fun makeRestaurantService(isDebug: Boolean): RestaurantService {
         val okHttpClient = makeOkHttpClient(
             makeLoggingInterceptor((isDebug))
         )
