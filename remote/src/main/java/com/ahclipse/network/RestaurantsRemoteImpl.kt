@@ -12,8 +12,8 @@ class RestaurantsRemoteImpl @Inject constructor(
     private val mapper: RestaurantRecordMapper
 ) : RestaurantsRemoteClient {
 
-    override fun getRestaurants(): Observable<List<RestaurantEntity>> {
-        return service.getRestaurants(37.422740, -122.139956, 0, 50).map { it ->
+    override fun getRestaurants(lat: Double, long: Double): Observable<List<RestaurantEntity>> {
+        return service.getRestaurants(lat, long, 0, 50).map { it ->
             it.map { mapper.mapFromRecord(it) }
         }
     }

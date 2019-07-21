@@ -8,9 +8,18 @@ import javax.inject.Inject
 
 class GetRestaurants @Inject constructor(
     private val restaurantsRemoteClient: RestaurantsRemoteClient, postExecutionThread: PostExecutionThread
-) : ObservableUseCase<List<RestaurantEntity>, Nothing?>(postExecutionThread) {
+) : ObservableUseCase<List<RestaurantEntity>, GetRestaurants.Params?>(postExecutionThread) {
 
-    override fun buildUseCaseObservable(params: Nothing?): Observable<List<RestaurantEntity>> {
-        return restaurantsRemoteClient.getRestaurants()
+    override fun buildUseCaseObservable(params: Params?): Observable<List<RestaurantEntity>> {
+        if (params == null) throw IllegalArgumentException("Params can't be null!")
+        return restaurantsRemoteClient.getRestaurants(params.lat, params.long)
+    }
+
+    data class Params constructor(val lat: Double, val long: Double) {
+        companion object {
+            fun forProject(lat: Double, long: Double): Params {
+                return Params(lat, long)
+            }
+        }
     }
 }

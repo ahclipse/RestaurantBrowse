@@ -10,7 +10,7 @@ class RestaurantsRemoteDataStore @Inject constructor(
     private val restaurantsRemoteClient: RestaurantsRemoteClient
 ) : RestaurantsDataStore {
 
-    override fun getRestaurants(): Observable<List<RestaurantEntity>> {
-        return restaurantsRemoteClient.getRestaurants()
+    override fun getRestaurants(lat: Double, long: Double): Observable<List<RestaurantEntity>> {
+        return restaurantsRemoteClient.getRestaurants(lat, long)
     }
 }

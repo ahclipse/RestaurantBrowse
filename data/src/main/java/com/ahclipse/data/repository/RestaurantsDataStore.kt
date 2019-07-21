@@ -5,5 +5,5 @@ import io.reactivex.Observable
 
 interface RestaurantsDataStore {
 
-    fun getRestaurants(): Observable<List<RestaurantEntity>>
+    fun getRestaurants(lat: Double, long: Double): Observable<List<RestaurantEntity>>
 }

@@ -5,5 +5,5 @@ import io.reactivex.Observable
 
 interface RestaurantsRemoteClient {
 
-    fun getRestaurants(): Observable<List<RestaurantEntity>>
+    fun getRestaurants(lat: Double, long: Double): Observable<List<RestaurantEntity>>
 }

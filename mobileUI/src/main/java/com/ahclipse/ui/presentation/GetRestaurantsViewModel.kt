@@ -17,6 +17,9 @@ class GetRestaurantsViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val liveData: MutableLiveData<Resource<List<RestaurantView>>> = MutableLiveData()
+    // Hardcoded lat long values for now...
+    private val latitude = 37.422740
+    private val longitude = -122.139956
 
     override fun onCleared() {
         getRestaurants.dispose()
@@ -29,7 +32,7 @@ class GetRestaurantsViewModel @Inject constructor(
 
     fun fetchRestaurants() {
         liveData.postValue(Resource(ResourceState.LOADING, null, null))
-        getRestaurants.execute(RestaurantsSubscriber())
+        getRestaurants.execute(RestaurantsSubscriber(), GetRestaurants.Params(latitude, longitude))
     }
 
     inner class RestaurantsSubscriber : DisposableObserver<List<RestaurantEntity>>() {
