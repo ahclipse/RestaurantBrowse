@@ -1,4 +1,4 @@
-package com.ahclipse.doordashviewer
+package com.ahclipse.ui
 
 import org.junit.Test
 

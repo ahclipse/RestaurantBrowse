@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["compileSdkVersion"]
+    buildToolsVersion globalConfiguration["buildToolsVersion"]
+
+
+    defaultConfig {
+        applicationId "com.ahclipse.ui"
+        minSdkVersion globalConfiguration["minSdkVersion"]
+        targetSdkVersion globalConfiguration["targetSdkVersion"]
+        multiDexEnabled = true
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    def mobileUIDependencies = rootProject.ext.mobileUIDependencies
+    def mobileUITestDependencies = rootProject.ext.mobileUITestDependencies
+
+    implementation project(':data')
+    implementation project(':remote')
+
+    implementation mobileUIDependencies.javaxAnnotation
+    implementation mobileUIDependencies.kotlin
+    implementation mobileUIDependencies.javaxInject
+    implementation mobileUIDependencies.rxKotlin
+    implementation mobileUIDependencies.appCompatV7
+    implementation mobileUIDependencies.constraintLayout
+
+    testImplementation mobileUITestDependencies.kotlinJUnit
+    androidTestImplementation mobileUITestDependencies.junit
+    androidTestImplementation mobileUITestDependencies.mockito
+    androidTestImplementation mobileUITestDependencies.supportRunner
+    androidTestImplementation mobileUITestDependencies.espressoCore
+}

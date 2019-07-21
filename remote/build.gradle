@@ -1,0 +1,24 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    def networkDependencies = rootProject.ext.networkDependencies
+    def networkTestDependencies = rootProject.ext.networkTestDependencies
+
+    compile project(':data')
+
+    implementation networkDependencies.javaxAnnotation
+    implementation networkDependencies.kotlin
+    implementation networkDependencies.javaxInject
+    implementation networkDependencies.rxKotlin
+    implementation networkDependencies.gson
+    implementation networkDependencies.okHttp
+    implementation networkDependencies.okHttpLogger
+    implementation networkDependencies.retrofit
+    implementation networkDependencies.retrofitConverter
+    implementation networkDependencies.retrofitAdapter
+
+    implementation networkTestDependencies.junit
+    implementation networkTestDependencies.kotlinJUnit
+    implementation networkTestDependencies.mockito
+    implementation networkTestDependencies.assertj
+}

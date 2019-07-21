@@ -1,0 +1,17 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    def dataDependencies = rootProject.ext.dataDependencies
+    def dataTestDependencies = rootProject.ext.dataTestDependencies
+
+    implementation dataDependencies.kotlin
+    implementation dataDependencies.rxKotlin
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.javaxAnnotation
+    implementation dataDependencies.javaxInject
+
+    testImplementation dataTestDependencies.kotlinJUnit
+    testImplementation dataTestDependencies.junit
+    testImplementation dataTestDependencies.mockito
+    testImplementation dataTestDependencies.assertj
+}
