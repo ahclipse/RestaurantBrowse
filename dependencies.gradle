@@ -9,6 +9,7 @@ ext {
     supportLibraryVersion = '28.0.0'
     rxKotlinVersion = '2.3.0'
     rxJavaVersion = '2.2.10'
+    rxAndroidVersion = '2.1.1'
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
     gsonVersion = '2.8.5'
@@ -26,11 +27,11 @@ ext {
 
     // https://github.com/ReactiveX/RxKotlin/issues/216 Forcing rxJava dependency
     dataDependencies = [
-            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
-            rxKotlin        : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            javaxAnnotation : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-            javaxInject     : "javax.inject:javax.inject:${javaxInjectVersion}",
-            rxJava          : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+            rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
     ]
 
     dataTestDependencies = [
@@ -41,41 +42,42 @@ ext {
     ]
 
     networkDependencies = [
-            gson:               "com.google.code.gson:gson:${gsonVersion}",
-            rxKotlin:           "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin:             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
-            javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+            gson              : "com.google.code.gson:gson:${gsonVersion}",
+            rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
+            javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${supportAnnotationsVersion}",
-            okHttp:             "com.squareup.okhttp3:okhttp:${okHttpVersion}",
-            okHttpLogger:       "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
-            retrofit:           "com.squareup.retrofit2:retrofit:${retrofitVersion}",
-            retrofitConverter:  "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
-            retrofitAdapter:    "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+            okHttp            : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okHttpLogger      : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            retrofit          : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitConverter : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitAdapter   : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
     ]
 
     networkTestDependencies = [
-            junit:              "junit:junit:${jUnitVersion}",
-            kotlinJUnit:        "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
-            assertj:            "org.assertj:assertj-core:${assertJVersion}",
-            mockito:            "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
+            junit      : "junit:junit:${jUnitVersion}",
+            kotlinJUnit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
+            assertj    : "org.assertj:assertj-core:${assertJVersion}",
+            mockito    : "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
     ]
 
-    mobileUIDependencies =  [
-            javaxAnnotation     : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-            kotlin              : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
-            rxKotlin            : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            javaxInject         : "javax.inject:javax.inject:${javaxInjectVersion}",
-            appCompatV7         : "com.android.support:appcompat-v7:${supportLibraryVersion}",
-            constraintLayout    : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}"
+    mobileUIDependencies = [
+            javaxAnnotation : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+            rxKotlin        : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            rxAndroid       : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaxInject     : "javax.inject:javax.inject:${javaxInjectVersion}",
+            appCompatV7     : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+            constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}"
     ]
 
     mobileUITestDependencies = [
-            junit:              "junit:junit:${jUnitVersion}",
-            kotlinJUnit:        "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
-            assertj:            "org.assertj:assertj-core:${assertJVersion}",
-            mockito:            "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
-            supportRunner:      "com.android.support.test:runner:${androidSupportRunnerVersion}",
-            espressoCore:       "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+            junit        : "junit:junit:${jUnitVersion}",
+            kotlinJUnit  : "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
+            assertj      : "org.assertj:assertj-core:${assertJVersion}",
+            mockito      : "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+            supportRunner: "com.android.support.test:runner:${androidSupportRunnerVersion}",
+            espressoCore : "com.android.support.test.espresso:espresso-core:${espressoVersion}"
     ]
 }

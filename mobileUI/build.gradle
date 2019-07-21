@@ -47,6 +47,7 @@ dependencies {
     implementation mobileUIDependencies.rxKotlin
     implementation mobileUIDependencies.appCompatV7
     implementation mobileUIDependencies.constraintLayout
+    implementation mobileUIDependencies.rxAndroid
 
     testImplementation mobileUITestDependencies.kotlinJUnit
     androidTestImplementation mobileUITestDependencies.junit
