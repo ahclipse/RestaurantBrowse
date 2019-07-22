@@ -1,4 +1,4 @@
-package com.ahclipse.network.mapper
+package com.ahclipse.remote.mapper
 
 interface RecordMapper<in R, out E> {
 

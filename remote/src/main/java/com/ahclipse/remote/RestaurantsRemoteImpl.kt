@@ -1,9 +1,9 @@
-package com.ahclipse.network
+package com.ahclipse.remote
 
 import com.ahclipse.data.model.RestaurantEntity
 import com.ahclipse.data.repository.RestaurantsRemoteClient
-import com.ahclipse.network.mapper.RestaurantRecordMapper
-import com.ahclipse.network.service.RestaurantService
+import com.ahclipse.remote.mapper.RestaurantRecordMapper
+import com.ahclipse.remote.service.RestaurantService
 import io.reactivex.Observable
 import javax.inject.Inject
 

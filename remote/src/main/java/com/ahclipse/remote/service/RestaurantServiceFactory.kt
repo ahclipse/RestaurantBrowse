@@ -1,4 +1,4 @@
-package com.ahclipse.network.service
+package com.ahclipse.remote.service
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -18,7 +18,7 @@ object RestaurantServiceFactory {
         val okHttpClient = makeOkHttpClient(
             makeLoggingInterceptor((isDebug))
         )
-        return this.makeRestaurantService(okHttpClient, Gson())
+        return makeRestaurantService(okHttpClient, Gson())
     }
 
     private fun makeRestaurantService(okHttpClient: OkHttpClient, gson: Gson): RestaurantService {

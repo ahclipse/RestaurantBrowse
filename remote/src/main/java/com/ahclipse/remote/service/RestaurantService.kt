@@ -1,6 +1,6 @@
-package com.ahclipse.network.service
+package com.ahclipse.remote.service
 
-import com.ahclipse.network.model.RestaurantRecord
+import com.ahclipse.remote.model.RestaurantRecord
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -1,10 +1,11 @@
-package com.ahclipse.network.mapper
+package com.ahclipse.remote.mapper
 
 import com.ahclipse.data.model.RestaurantEntity
-import com.ahclipse.network.model.RestaurantRecord
+import com.ahclipse.remote.model.RestaurantRecord
 import javax.inject.Inject
 
-class RestaurantRecordMapper @Inject constructor() : RecordMapper<RestaurantRecord, RestaurantEntity> {
+open class RestaurantRecordMapper @Inject constructor() :
+    RecordMapper<RestaurantRecord, RestaurantEntity> {
 
     override fun mapFromRecord(record: RestaurantRecord): RestaurantEntity {
         return RestaurantEntity(

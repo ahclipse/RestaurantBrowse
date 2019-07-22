@@ -1,4 +1,4 @@
-package com.ahclipse.ui
+package com.ahclipse.mobileUI
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

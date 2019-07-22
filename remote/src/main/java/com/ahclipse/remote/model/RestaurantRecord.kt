@@ -1,4 +1,4 @@
-package com.ahclipse.network.model
+package com.ahclipse.remote.model
 
 import com.google.gson.annotations.SerializedName
 
