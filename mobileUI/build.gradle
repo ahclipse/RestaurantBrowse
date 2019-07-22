@@ -64,7 +64,6 @@ dependencies {
     androidTestImplementation mobileUITestDependencies.mockito
     androidTestImplementation mobileUITestDependencies.supportRunner
     androidTestImplementation mobileUITestDependencies.espressoCore
-    androidTestImplementation mobileUITestDependencies.archTesting
 
     kaptTest mobileUIDependencies.daggerCompiler
     kaptAndroidTest mobileUIDependencies.daggerCompiler
