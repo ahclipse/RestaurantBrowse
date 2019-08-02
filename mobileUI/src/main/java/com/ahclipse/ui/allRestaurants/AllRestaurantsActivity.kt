@@ -20,6 +20,7 @@ class AllRestaurantsActivity : AppCompatActivity() {
 
     @Inject
     lateinit var allRestaurantsAdapter: AllRestaurantsAdapter
+
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
@@ -38,7 +39,7 @@ class AllRestaurantsActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        getRestaurantsViewModel.getRestaurants().observe(this,
+        getRestaurantsViewModel.liveData.observe(this,
             Observer<Resource<List<RestaurantView>>> {
                 it?.let {
                     handleDataState(it)

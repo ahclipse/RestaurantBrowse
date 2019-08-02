@@ -1,6 +1,5 @@
 package com.ahclipse.ui.presentation
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ahclipse.data.interactor.GetRestaurants
@@ -13,21 +12,18 @@ import io.reactivex.observers.DisposableObserver
 import javax.inject.Inject
 
 class GetRestaurantsViewModel @Inject constructor(
-    private val getRestaurants: GetRestaurants, private val mapper: RestaurantViewMapper
+    private val getRestaurants: GetRestaurants,
+    private val mapper: RestaurantViewMapper
 ) : ViewModel() {
 
-    private val liveData: MutableLiveData<Resource<List<RestaurantView>>> = MutableLiveData()
-    // Hardcoded lat long values for now...
+    val liveData: MutableLiveData<Resource<List<RestaurantView>>> = MutableLiveData()
+
     private val latitude = 37.422740
     private val longitude = -122.139956
 
     override fun onCleared() {
         getRestaurants.dispose()
         super.onCleared()
-    }
-
-    fun getRestaurants(): LiveData<Resource<List<RestaurantView>>> {
-        return liveData
     }
 
     fun fetchRestaurants() {
