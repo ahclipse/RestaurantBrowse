@@ -6,7 +6,9 @@ import com.ahclipse.data.executor.PostExecutionThread
 import com.ahclipse.ui.UIThread
 import com.ahclipse.ui.allRestaurants.AllRestaurantsActivity
 import com.ahclipse.ui.injection.ViewModelFactory
+import com.ahclipse.ui.login.LoginActivity
 import com.ahclipse.ui.presentation.GetRestaurantsViewModel
+import com.ahclipse.ui.presentation.LoginViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -23,10 +25,18 @@ abstract class UIModule {
     @ContributesAndroidInjector
     abstract fun contributesAllRestaurantsActivity(): AllRestaurantsActivity
 
+    @ContributesAndroidInjector
+    abstract fun contributesLoginActivity(): LoginActivity
+
     @Binds
     @IntoMap
     @ViewModelKey(GetRestaurantsViewModel::class)
     abstract fun bindGetRestaurantsViewModel(viewModel: GetRestaurantsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LoginViewModel::class)
+    abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
