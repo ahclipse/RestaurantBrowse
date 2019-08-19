@@ -2,8 +2,8 @@ package com.ahclipse.ui.injection.module
 
 import com.ahclipse.data.repository.RestaurantsRemoteClient
 import com.ahclipse.remote.RestaurantsRemoteImpl
-import com.ahclipse.remote.service.RestaurantService
-import com.ahclipse.remote.service.RestaurantServiceFactory
+import com.ahclipse.remote.service.restaurants.RestaurantService
+import com.ahclipse.remote.service.restaurants.RestaurantServiceFactory
 import com.ahclipse.ui.BuildConfig
 import dagger.Binds
 import dagger.Module

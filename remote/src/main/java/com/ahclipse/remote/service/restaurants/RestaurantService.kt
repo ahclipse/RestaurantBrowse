@@ -1,4 +1,4 @@
-package com.ahclipse.remote.service
+package com.ahclipse.remote.service.restaurants
 
 import com.ahclipse.remote.model.RestaurantRecord
 import io.reactivex.Observable

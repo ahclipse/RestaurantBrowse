@@ -1,4 +1,4 @@
-package com.ahclipse.remote.service
+package com.ahclipse.remote.service.restaurants
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -8,27 +8,30 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object RestaurantServiceFactory {
+object LoginServiceFactory {
 
     private const val baseUrl = "https://api.doordash.com/"
     private const val connectTimeoutSeconds: Long = 120
     private const val readTimeoutSeconds: Long = 120
 
-    open fun makeRestaurantService(isDebug: Boolean): RestaurantService {
+    open fun makeLoginService(isDebug: Boolean): LoginService {
         val okHttpClient = makeOkHttpClient(
             makeLoggingInterceptor((isDebug))
         )
-        return makeRestaurantService(okHttpClient, Gson())
+        return makeLoginService(
+            okHttpClient,
+            Gson()
+        )
     }
 
-    private fun makeRestaurantService(okHttpClient: OkHttpClient, gson: Gson): RestaurantService {
+    private fun makeLoginService(okHttpClient: OkHttpClient, gson: Gson): LoginService {
         val retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(okHttpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
-        return retrofit.create(RestaurantService::class.java)
+        return retrofit.create(LoginService::class.java)
     }
 
     private fun makeOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {

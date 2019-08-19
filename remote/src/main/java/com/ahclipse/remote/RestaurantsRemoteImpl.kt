@@ -3,7 +3,7 @@ package com.ahclipse.remote
 import com.ahclipse.data.model.RestaurantEntity
 import com.ahclipse.data.repository.RestaurantsRemoteClient
 import com.ahclipse.remote.mapper.RestaurantRecordMapper
-import com.ahclipse.remote.service.RestaurantService
+import com.ahclipse.remote.service.restaurants.RestaurantService
 import io.reactivex.Observable
 import javax.inject.Inject
 
