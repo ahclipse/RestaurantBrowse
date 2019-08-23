@@ -20,8 +20,8 @@ class LoginActivity : AppCompatActivity() {
         if (loginToken != null) {
             // Navigate to allRestaurants
             // End this activity
+            this.finish()
         }
 
     }
-
 }
